@@ -5,3 +5,15 @@
  | @author Vuk Samardžić <samardzic.vuk@gmail.com>
  |--------------------------------------------------------------------------
  */
+
+  @import "animation/bounce";
+
+  .autotyped
+  {
+    display: none;
+
+    &.autotyped-running
+    {
+      display: blocK;
+    }
+  }
