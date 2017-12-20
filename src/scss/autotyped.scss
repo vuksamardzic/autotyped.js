@@ -12,8 +12,10 @@
   {
     display: none;
 
-    &.autotyped-running
+    &.autotyped-running, &.autotyped-done
     {
       display: blocK;
     }
+
+
   }
