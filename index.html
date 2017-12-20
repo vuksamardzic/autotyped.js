@@ -5,11 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="./demo/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="./dist/autotyped.css">
     <title>autotyped.js</title>
 </head>
 <body>
-<p>init</p>
+
+    <p style="font-family: 'Roboto', sans-serif;" class="autotyped">autotyped.js is awesome!</p>
+    <p style="font-family: 'Roboto', sans-serif;" id="autotyped">autotyped.js is awesome!</p>
+
 <script src="./dist/autotyped.js"></script>
+<script>
+    autotyped.init();
+
+    document.getElementById('autotyped').addEventListener('click', function (ev)
+    {
+       autotyped.init({selector: '#autotyped', speed: 200});
+    });
+
+</script>
 </body>
 </html>

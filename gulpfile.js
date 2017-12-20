@@ -13,7 +13,6 @@ const autoprefixer      = require('autoprefixer');
 const concat            = require('gulp-concat');
 const uglify            = require('gulp-uglify');
 const surge             = require('gulp-surge');
-const babel             = require('gulp-babel');
 
 /**
  * Development setup
@@ -33,7 +32,7 @@ gulp.task('compile:scss', function()
     return gulp
         .src('./src/scss/**/*.scss')
         .pipe(sass({errLogToConsole: true, outputStyle: 'expanded'}).on('error', sass.logError))
-        .pipe(postcss([ autoprefixer() ]))
+        .pipe(postcss([autoprefixer()]))
         .pipe(gulp.dest('./dist/'))
         .pipe(browser_sync.stream());
 });
@@ -47,7 +46,6 @@ function swallowError (error)
 gulp.task('compile:es6',  function()
 {
     return gulp.src('./src/js/**/*.js')
-        .pipe(babel({presets: ['babel-preset-es2015']}))
         .on('error', swallowError)
         .pipe(concat('autotyped.js'))
         .pipe(gulp.dest('./dist/'));
@@ -69,7 +67,6 @@ gulp.task('minify:css', function()
 gulp.task('minify:js',  function()
 {
     return gulp.src('./src/js/**/*.js')
-        .pipe(babel({presets: ['babel-preset-es2015']}))
         .pipe(concat('autotyped.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/'));
@@ -79,7 +76,7 @@ gulp.task('minify:js',  function()
 gulp.task('surge', ['minify:css', 'minify:js'], function ()
 {
     return surge({
-        project: './dist',
+        project: './demo',
         domain: 'autotypedjs.surge.sh'
     })
 });

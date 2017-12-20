@@ -17,7 +17,7 @@
     "typed",
     "autotyped.js"
   ],
-  "author": "Vuk Samardžić",
+  "author": "Vuk Samardžić <samardzic.vuk@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/xemichar/autotyped.js/issues"
@@ -25,11 +25,8 @@
   "homepage": "https://github.com/xemichar/autotyped.js#readme",
   "devDependencies": {
     "autoprefixer": "^7.2.3",
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
