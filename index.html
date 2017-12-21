@@ -13,7 +13,7 @@
 <body>
 
     <p style="font-family: 'Roboto', sans-serif;" class="autotyped">autotyped.js is awesome!</p>
-    <p style="font-family: 'Roboto', sans-serif;" id="autotyped">autotyped.js is awesome!</p>
+    <p style="font-family: 'Roboto', sans-serif;" id="autotyped">click me!</p>
 
 <script src="./dist/autotyped.js"></script>
 <script>
@@ -21,9 +21,8 @@
 
     document.getElementById('autotyped').addEventListener('click', function (ev)
     {
-       autotyped.init({selector: '#autotyped', speed: 200});
+       autotyped.init({selector: '#autotyped', speed: 200, animation: 'rotate'});
     });
-
 </script>
 </body>
 </html>
