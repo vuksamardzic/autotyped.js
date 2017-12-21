@@ -17,12 +17,12 @@ Then, before your closing ```<body>``` tag add:
 <script type="text/javascript" src="./dist/autotyped.min.js"></script>
 ```
 
-###Usage
+### Usage
 ```javascript
 autotyped.init();
 ```
 
-###Settings
+### Settings
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
@@ -31,7 +31,7 @@ animate | boolean | true | Choose whether you animate or not.
 animation | string | 'bounce' | Choose which animation you use. We currently have `'bounce', 'rotate'`.
 speed | int | 500 | Autotype speed in ms.
 
-###Example
+### Example
 ```javascript
 //we want it to go faster then default (500)
 autotyped.init({speed: 200});
@@ -44,7 +44,7 @@ autotyped.init({animate: false});
 //we want specific selector with speed and other animation
 autotyped.init({speed: 250, animation: 'rotate', selector: '#myElement'});
 ```
-####License
+#### License
 
 Licensed under the MIT license.
 
