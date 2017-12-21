@@ -3,7 +3,7 @@ autotyped.js is a library that types any string.
 
 [Demo](https://autotypedjs.surge.sh/)
 
-#### Includes
+### Includes
 
 Just add a link to the css file in your `<head>`:
 
@@ -48,4 +48,4 @@ autotyped.init({speed: 250, animation: 'rotate', selector: '#myElement'});
 
 Licensed under the MIT license.
 
-Made with :heart: by Vuk Samardžić[(@xemichar)](https://github.com/xemichar).
+Made with :heart: by Vuk Samardžić.
