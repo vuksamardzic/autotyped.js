@@ -18,13 +18,13 @@ const surge             = require('gulp-surge');
  * Development setup
  */
 
-gulp.task('serve', ['compile:es6' ,'compile:scss'], function()
+gulp.task('serve', ['compile:js' ,'compile:scss'], function()
 {
     browser_sync.init({ server: './' });
 
     gulp.watch('./src/scss/**/*.scss', ['compile:scss']);
     gulp.watch('*.html', browser_sync.reload);
-    gulp.watch('./src/js/**/*.js', ['compile:es6', browser_sync.reload]);
+    gulp.watch('./src/js/**/*.js', ['compile:js', browser_sync.reload]);
 });
 
 gulp.task('compile:scss', function()
@@ -37,16 +37,13 @@ gulp.task('compile:scss', function()
         .pipe(browser_sync.stream());
 });
 
-function swallowError (error)
-{
-    console.log(error.toString());
-    this.emit('end')
-}
-
-gulp.task('compile:es6',  function()
+gulp.task('compile:js',  function()
 {
     return gulp.src('./src/js/**/*.js')
-        .on('error', swallowError)
+        .on('error', function (error) {
+            console.log(error.toString());
+            this.emit('end');
+        })
         .pipe(concat('autotyped.js'))
         .pipe(gulp.dest('./dist/'));
 });

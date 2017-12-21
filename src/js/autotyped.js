@@ -29,7 +29,8 @@
      |--------------------------------------------------------------------------
      */
 
-    var defaults = {
+    var defaults =
+    {
         selector: '.autotyped',
         animate: true,
         animation: 'bounce',
@@ -43,34 +44,38 @@
      */
 
     /**
-     * Merge two or more objects. Returns a new object.
-     * @private
-     * @param {Boolean}  deep     If true, do a deep (or recursive) merge [optional]
-     * @param {Object}   objects  The objects to merge together
-     * @returns {Object}          Merged values of defaults and options
+     |--------------------------------------------------------------------------
+     | Merge two or more objects. Returns a new object.
+     |--------------------------------------------------------------------------
      */
-    var extend = function extend() {
-
-        // variables
+    var extend = function ()
+    {
         var extended = {};
         var deep = false;
         var i = 0;
         var length = arguments.length;
 
         // Check if a deep merge
-        if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
+        if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]')
+        {
             deep = arguments[0];
             i++;
         }
 
         // Merge the object into the extended object
-        var merge = function merge(obj) {
-            for (var prop in obj) {
-                if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+        var merge = function (obj)
+        {
+            for (var prop in obj)
+            {
+                if (Object.prototype.hasOwnProperty.call(obj, prop))
+                {
                     // If deep merge and property is an object, merge properties
-                    if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
+                    if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]')
+                    {
                         extended[prop] = extend(true, extended[prop], obj[prop]);
-                    } else {
+                    }
+                    else
+                    {
                         extended[prop] = obj[prop];
                     }
                 }
@@ -78,7 +83,8 @@
         };
 
         // Loop through each object and conduct a merge
-        for (; i < length; i++) {
+        for (; i < length; i++)
+        {
             var obj = arguments[i];
             merge(obj);
         }
@@ -92,55 +98,47 @@
      |--------------------------------------------------------------------------
      */
 
-    var _collection = function _collection(i, settings, el)
+    var _collection = function (i, settings, el)
     {
         var txt = el[i].innerHTML;
         var arr = txt.split('');
         var rawHTML = '';
-        var skip_arr = arr.map(function (i, index) {
-            return i === ' ' ? index : false;
-        }).filter(function (i) {
-            return i !== false;
-        });
-        arr = arr.filter(function (i) {
-            return i !== ' ';
-        });
 
-        el[i].classList.add('autotyped-running');
-        el[i].innerHTML = '';
-
-        arr.map(function (j, index)
+        if ( !el[i].classList.contains('autotyped-running') )
         {
-            setTimeout(function ()
+            el[i].classList.add('autotyped-running');
+            el[i].innerHTML = '';
+
+            var interval = setInterval(function ()
             {
-                skip_arr.map(function (k, k_index)
+                if ( arr.length === 0 )
                 {
-                    if (k - k_index === index) {
-                        rawHTML += ' ';
-                    }
-                });
-
-                el[i].innerHTML = rawHTML;
-                el[i].innerHTML += settings.animate ? '<span class="at-' + settings.animation + '">' + j + '</span>' : j;
-                settings.animate ? el[i].firstElementChild.style.animationDuration = settings.speed + 'ms' : '';
-                rawHTML += j;
-
-                if (index + 1 === arr.length)
-                {
-                    setTimeout(function()
+                    clearInterval(interval);
+                    el[i].innerHTML = rawHTML;
+                    var class_array = el[i].classList;
+                    if ( class_array.contains('autotyped-running') )
                     {
-                        console.log('done');
-                        el[i].innerHTML = rawHTML;
-                        var class_array = el[i].classList;
-                        if ( class_array.contains('autotyped-running') )
-                        {
-                            class_array.remove('autotyped-running');
-                            class_array.add('autotyped-done')
-                        }
-                    }, settings.speed);
+                        class_array.remove('autotyped-running');
+                        class_array.add('autotyped-done')
+                    }
                 }
-            }, settings.speed * (index + 1));
-        });
+                else
+                {
+                    var char = arr[0];
+                    el[i].innerHTML = rawHTML;
+                    el[i].innerHTML += settings.animate ? '<span class="at-' + settings.animation + '">' + char + '</span>' : char;
+                    settings.animate ? el[i].firstElementChild.style.animationDuration = settings.speed + 'ms' : '';
+                    rawHTML += char;
+                    arr.splice(0, 1);
+
+                    if ( arr[0] === ' ' )
+                    {
+                        rawHTML += ' ';
+                        arr.splice(0, 1);
+                    }
+                }
+            }, settings.speed);
+        }
     };
 
     /**
