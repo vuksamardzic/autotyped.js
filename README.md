@@ -33,7 +33,7 @@ speed | int | 500 | Autotype speed in ms.
 
 ### Example
 ```javascript
-//we want it to go faster then default (500)
+//we want it to go faster or slower than default (500)
 autotyped.init({speed: 200});
 ```
 ```javascript
