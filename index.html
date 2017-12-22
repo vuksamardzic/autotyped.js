@@ -5,24 +5,55 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="./demo/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- build:ico -->
+    <link rel="icon" type="image/png" href="./demo/favicon.css">
+    <!-- endbuild -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <!-- build:css -->
     <link rel="stylesheet" href="./dist/autotyped.css">
+    <link rel="stylesheet" href="./dist/custom.css">
+    <!-- endbuild -->
     <title>autotyped.js</title>
 </head>
 <body>
 
-    <p style="font-family: 'Roboto', sans-serif;" class="autotyped">autotyped.js is awesome!</p>
-    <p style="font-family: 'Roboto', sans-serif;" id="autotyped">click me!</p>
+<div class="main-wrapper">
+    <h1 class="autotyped">autotyped.js</h1>
+    <p>Pick and play :)</p>
+    <form >
+        <div>
+            <label for="animation-select">Select animation</label>
+            <select name="animation" id="animation-select">
+                <option value="bounce">bounce</option>
+                <option value="rotate">rotate</option>
+            </select>
+        </div>
 
+        <div>
+            <label for="speed-select">Select speed</label>
+            <select name="speed" id="speed-select">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+                <option value="600">600</option>
+                <option value="700">700</option>
+                <option value="800">800</option>
+                <option value="900">900</option>
+                <option value="1000">1000</option>
+            </select>
+        </div>
+
+        <div class="type-button">type</div>
+    </form>
+</div>
+
+<!-- build:js -->
 <script src="./dist/autotyped.js"></script>
-<script>
-    autotyped.init();
+<script src="./dist/custom.js"></script>
+<!-- endbuild -->
 
-    document.getElementById('autotyped').addEventListener('click', function (ev)
-    {
-       autotyped.init({selector: '#autotyped', speed: 200, animation: 'rotate'});
-    });
-</script>
 </body>
 </html>
