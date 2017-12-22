@@ -28,6 +28,8 @@
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-surge": "^0.1.0",

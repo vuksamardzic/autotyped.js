@@ -1,2 +1,4 @@
 .idea/
 node_modules/
+dist/custom.css
+dist/custom.js
