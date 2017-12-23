@@ -100,7 +100,7 @@ gulp.task('demo:html', function()
             'css': ['./css/autotyped.css','./css/custom.css'],
             'js': ['./js/autotyped.min.js','./js/custom.min.js']
         }))
-        .pipe(htmlmin({collapseWhitespace: true, collapseInlineTagWhitespace: true, removeComments: true}))
+        .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
         .pipe(gulp.dest('./demo'));
 });
 
