@@ -12,10 +12,12 @@
 
   .autotyped
   {
-    display: none;
+    display: block;
+    opacity: 0;
 
     &.autotyped-running, &.autotyped-done
     {
+      opacity: 1;
       display: blocK;
     }
   }
