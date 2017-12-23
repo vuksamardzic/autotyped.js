@@ -100,12 +100,17 @@
 
     var _collection = function (i, settings, el)
     {
-        var txt = el[i].innerHTML;
-        var arr = txt.split('');
+        var arr = el[i].innerHTML.split('');
         var rawHTML = '';
 
         if ( !el[i].classList.contains('autotyped-running') )
         {
+            if ( el[i].classList.contains('autotyped-done') )
+            {
+                el[i].classList.remove('autotyped-done');
+            }
+            var h = el[i].clientHeight;
+            el[i].style.height = h+'px';
             el[i].classList.add('autotyped-running');
             el[i].innerHTML = '';
 
@@ -119,7 +124,8 @@
                     if ( class_array.contains('autotyped-running') )
                     {
                         class_array.remove('autotyped-running');
-                        class_array.add('autotyped-done')
+                        class_array.add('autotyped-done');
+                        el[i].style.removeProperty('height');
                     }
                 }
                 else
