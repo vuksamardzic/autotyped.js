@@ -23,6 +23,7 @@ body
 
 form
 {
+  text-align: center;
 
   & > div
   {
@@ -52,12 +53,12 @@ form
   {
     display: inline-block;
     padding: 10px 15px;
-    border: 1px solid lightgray;
-    color: #6f6f6f;
+    border: 2px solid #8f8f8f;
+    color: #727272;
     border-radius: 2px;
     cursor: pointer;
     outline: 0;
-    font-weight: 300;
+    font-weight: 500;
     user-select: none;
   }
 }
@@ -65,9 +66,9 @@ form
 h1
 {
   font-size: 80px;
-  color: lightblue;
   font-weight: 100;
-  margin: 20px 0 0;
+  margin: 0;
+  color: rgba(29, 121, 181, 0.72);
 }
 
 p
@@ -75,4 +76,31 @@ p
   font-weight: 300;
   font-size: 25px;
   color: lightgrey;
+  text-align: center;
+}
+
+.db
+{
+  display: block;
+  p
+  {
+    color: #a5a5a5;
+    font-size: 15px;
+    &.author
+    {
+      font-size: 13px;
+      color: #3d464d;
+      text-align: center;
+
+      & > a
+      {
+        font-weight: 500;
+      }
+    }
+
+    a
+    {
+      color: rgb(123, 137, 147);
+    }
+  }
 }
