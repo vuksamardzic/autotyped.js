@@ -1,0 +1,23 @@
+@keyframes at-pop-in
+{
+  from
+  {
+    transform: scale(0);
+  }
+
+  65%
+  {
+    transform: scale(1.5);
+  }
+
+  to
+  {
+    transform: scale(1);
+  }
+}
+
+.at-pop-in
+{
+  display: inline-block;
+  animation-name: at-pop-in;
+}
