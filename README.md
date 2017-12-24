@@ -28,7 +28,7 @@ Option | Type | Default | Description
 ------ | ---- | ------- | -----------
 selector | string | '.autotyped' | Selector from which we fetch string, can be `#selector` or `.selector`.
 animate | boolean | true | Choose whether you animate or not.
-animation | string | 'bounce' | Choose which animation you use. Available `'bounce', 'rotate', 'rubber-band'`.
+animation | string | 'bounce' | Choose which animation you use. Available `'bounce'`, `'rotate'`, `'rubber-band'`, `'pop-in'`.
 speed | int | 500 | Autotype speed in ms.
 
 ### Example
