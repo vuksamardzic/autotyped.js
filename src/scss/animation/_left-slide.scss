@@ -1,0 +1,18 @@
+@keyframes at-left-slide
+{
+  from
+  {
+    transform: translateX(50px);
+  }
+
+  to
+  {
+    transform: translateX(0);
+  }
+}
+
+.at-left-slide
+{
+  display: inline-block;
+  animation-name: at-left-slide;
+}

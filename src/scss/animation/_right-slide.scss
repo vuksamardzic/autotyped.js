@@ -1,0 +1,18 @@
+@keyframes at-right-slide
+{
+  from
+  {
+    transform: translateX(-50px);
+  }
+
+  to
+  {
+    transform: translateX(0);
+  }
+}
+
+.at-right-slide
+{
+  display: inline-block;
+  animation-name: at-right-slide;
+}
