@@ -104,3 +104,16 @@ p
     }
   }
 }
+
+@media screen and (max-width: 640px)
+{
+  .main-wrapper
+  {
+    max-width: 342px;
+  }
+
+  h1
+  {
+    font-size: 65px;
+  }
+}
