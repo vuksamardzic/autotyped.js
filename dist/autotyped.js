@@ -31,7 +31,7 @@
 
     var defaults =
     {
-        selector: '.autotyped',
+        selector: '.autotyped-init',
         animate: true,
         animation: 'bounce',
         speed: 500
