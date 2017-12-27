@@ -13,9 +13,13 @@
   @import "animation/left-slide";
   @import "animation/right-slide";
 
-  .autotyped-running,
-  .autotyped-done
+  .autotyped-init
   {
-    opacity: 1;
-    display: blocK;
+    opacity: 0;
+
+    &.autotyped-running,
+    &.autotyped-done
+    {
+      opacity: 1;
+    }
   }

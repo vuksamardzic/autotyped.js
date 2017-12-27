@@ -7,4 +7,11 @@ window.onload = function (ev)
         var speed = document.querySelector('#speed-select').value;
         autotyped.init({speed: speed, animation: an});
     });
+
+    document.querySelector('#animation-select').addEventListener('change', function ()
+    {
+        var an = document.querySelector('#animation-select').value;
+        var speed = document.querySelector('#speed-select').value;
+        autotyped.init({speed: speed, animation: an});
+    });
 };
