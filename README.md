@@ -38,17 +38,30 @@ animation | string | 'bounce' | Choose which animation you use. Available `'boun
 speed | int | 500 | Autotype speed in ms.
 
 ### Example
-```javascript
-//we want it to go faster or slower than default (500)
-autotyped.init({speed: 200});
+```html
+<p class="autotyped-init">Text to be autotyped!</p>
+ 
+<script>
+    //we want it to go faster or slower than default (500)
+    autotyped.init({speed: 200});
+</script>
 ```
-```javascript
-//we somehow don't want animations... weird.. but hey, your choice
-autotyped.init({animate: false});
+```html
+<p class="autotyped-init">Text to be autotyped!</p>
+ 
+<script>
+    //we somehow don't want animations... weird.. but hey, your choice
+    autotyped.init({animate: false});
+</script>
 ```
-```javascript
-//we want specific selector with speed and other animation
-autotyped.init({speed: 250, animation: 'rotate', selector: '#myElement'});
+```html
+<p id="myElement" class="autotyped-init">Text to be autotyped!</p>
+ 
+<script>
+    //we want specific selector with speed and other animation
+    //remember we have to have `autotyped-init` class on our element, and also every script tag needs to be below our `autotyped.min.js` file :)
+    autotyped.init({speed: 250, animation: 'rotate', selector: '#myElement'});
+</script>
 ```
 #### License
 
