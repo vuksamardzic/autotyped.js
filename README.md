@@ -58,8 +58,7 @@ speed | int | 500 | Autotype speed in ms.
 <p id="myElement" class="autotyped-init">Text to be autotyped!</p>
  
 <script>
-    //we want specific selector with speed and other animation
-    //remember we have to have `autotyped-init` class on our element, and also every script tag needs to be below our `autotyped.min.js` file :)
+    //we want specific selector with custom speed and other animation
     autotyped.init({speed: 250, animation: 'rotate', selector: '#myElement'});
 </script>
 ```
