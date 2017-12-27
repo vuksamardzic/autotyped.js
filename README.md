@@ -19,17 +19,13 @@ Then, before your closing ```<body>``` tag add:
 
 ### Usage
 ```html
-<!--some html usage-->
 <h1 class="autotyped-init">Text to be autotyped!</h1>
-<h1 id="your-id" class="autotyped-init">Text to be autotyped!</h1>
-<h1 class="your-class autotyped-init">Text to be autotyped!</h1>
 ```
 
-```javascript
-//following with javascript upper examples respectively
-autotyped.init();
-autotyped.init({selector: '#your-id'});
-autotyped.init({selector: '.your-class'});
+```html
+<script>
+    autotyped.init();
+</script>
 ```
 
 ### Settings
