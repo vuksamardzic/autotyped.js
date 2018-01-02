@@ -7,12 +7,12 @@
 
   33%
   {
-    transform: translateY(-10px);
+    transform: translateY(-0.3em);
   }
 
   66%
   {
-    transform: translateY(5px);
+    transform: translateY(0.15em);
   }
 
   100%
@@ -24,5 +24,5 @@
 .at-bounce
 {
   display: inline-block;
-  animation: at-bounce ease-in-out;
+  animation-name: at-bounce;
 }
