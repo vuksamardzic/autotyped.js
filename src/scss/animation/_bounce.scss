@@ -2,17 +2,14 @@
 {
   0%
   {
+    opacity: 0.8;
     transform: translateY(0);
   }
 
-  33%
+  50%
   {
+    opacity: 1;
     transform: translateY(-0.3em);
-  }
-
-  66%
-  {
-    transform: translateY(0.15em);
   }
 
   100%

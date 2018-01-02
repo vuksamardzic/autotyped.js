@@ -1,6 +1,6 @@
 window.onload = function (ev)
 {
-    autotyped.init({speed: 200});
+    autotyped.init({speed: 200, animation: 'left-slide'});
     document.querySelector('.type-button').addEventListener('click', function (ev)
     {
         var an = document.querySelector('#animation-select').value;
