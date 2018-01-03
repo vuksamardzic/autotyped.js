@@ -36,6 +36,7 @@ selector | string | '.autotyped-init' | CSS selector. Also your element needs to
 animate | boolean | true | Choose whether you animate or not.
 animation | string | 'bounce' | Choose which animation you use. Available `'bounce'`, `'rotate'`, `'rubber-band'`, `'pop-in'`, `'left-slide'`, `'right-slide'`, `'meteor-shower'`.
 speed | int | 500 | Autotype speed in ms.
+text | string | undefined | Text you feed to autotyped.js
 
 ### Example
 ```html
