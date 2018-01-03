@@ -100,7 +100,7 @@
 
     var _collection = function (i, settings, el)
     {
-        var arr = el[i].innerHTML.split('');
+        var arr = settings.text ? settings.text.split('') : el[i].innerHTML.split('');
         var rawHTML = '';
 
         if ( !el[i].classList.contains('autotyped-running') )
