@@ -1,14 +1,9 @@
 (function (root, factory) {
-    if ( typeof define === 'function' && define.amd )
-    {
+    if (typeof define === 'function' && define.amd) {
         define([], factory(root));
-    }
-    else if ( typeof exports === 'object' )
-    {
+    } else if (typeof exports === 'object') {
         module.exports = factory(root);
-    }
-    else
-    {
+    } else {
         root.autotyped = factory(root);
     }
 })(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
@@ -29,8 +24,7 @@
      |--------------------------------------------------------------------------
      */
 
-    var defaults =
-    {
+    var defaults = {
         selector: '.autotyped-init',
         animate: true,
         animation: 'bounce',
@@ -48,34 +42,26 @@
      | Merge two or more objects. Returns a new object.
      |--------------------------------------------------------------------------
      */
-    var extend = function ()
-    {
+    var extend = function () {
         var extended = {};
         var deep = false;
         var i = 0;
         var length = arguments.length;
 
         // Check if a deep merge
-        if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]')
-        {
+        if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
             deep = arguments[0];
             i++;
         }
 
         // Merge the object into the extended object
-        var merge = function (obj)
-        {
-            for (var prop in obj)
-            {
-                if (Object.prototype.hasOwnProperty.call(obj, prop))
-                {
+        var merge = function (obj) {
+            for (var prop in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, prop)) {
                     // If deep merge and property is an object, merge properties
-                    if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]')
-                    {
+                    if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
                         extended[prop] = extend(true, extended[prop], obj[prop]);
-                    }
-                    else
-                    {
+                    } else {
                         extended[prop] = obj[prop];
                     }
                 }
@@ -83,8 +69,7 @@
         };
 
         // Loop through each object and conduct a merge
-        for (; i < length; i++)
-        {
+        for (; i < length; i++) {
             var obj = arguments[i];
             merge(obj);
         }
@@ -98,38 +83,30 @@
      |--------------------------------------------------------------------------
      */
 
-    var _collection = function (i, settings, el)
-    {
+    var _collection = function (i, settings, el) {
         var arr = settings.text ? settings.text.split('') : el[i].innerHTML.split('');
         var rawHTML = '';
 
-        if ( !el[i].classList.contains('autotyped-running') )
-        {
-            if ( el[i].classList.contains('autotyped-done') )
-            {
+        if (!el[i].classList.contains('autotyped-running')) {
+            if (el[i].classList.contains('autotyped-done')) {
                 el[i].classList.remove('autotyped-done');
             }
             var h = el[i].clientHeight;
-            el[i].style.height = h+'px';
+            el[i].style.height = h + 'px';
             el[i].classList.add('autotyped-running');
             el[i].innerHTML = '';
 
-            var interval = setInterval(function ()
-            {
-                if ( arr.length === 0 )
-                {
+            var interval = setInterval(function () {
+                if (arr.length === 0) {
                     clearInterval(interval);
                     el[i].innerHTML = rawHTML;
                     var class_array = el[i].classList;
-                    if ( class_array.contains('autotyped-running') )
-                    {
+                    if (class_array.contains('autotyped-running')) {
                         class_array.remove('autotyped-running');
                         class_array.add('autotyped-done');
                         el[i].style.removeProperty('height');
                     }
-                }
-                else
-                {
+                } else {
                     var char = arr[0];
                     el[i].innerHTML = rawHTML;
                     el[i].innerHTML += settings.animate ? '<span class="at-' + settings.animation + '">' + char + '</span>' : char;
@@ -137,8 +114,7 @@
                     rawHTML += char;
                     arr.splice(0, 1);
 
-                    if ( arr[0] === ' ' )
-                    {
+                    if (arr[0] === ' ') {
                         rawHTML += ' ';
                         arr.splice(0, 1);
                     }
@@ -160,13 +136,11 @@
      | Init method
      |--------------------------------------------------------------------------
      */
-    publicMethods.init = function (options)
-    {
+    publicMethods.init = function (options) {
         var settings = extend(defaults, options || {});
         var el = document.querySelectorAll(settings.selector);
 
-        for (var i = 0; i < el.length; i++)
-        {
+        for (var i = 0; i < el.length; i++) {
             _collection(i, settings, el);
         }
     };
