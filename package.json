@@ -4,7 +4,7 @@
   "description": "autotyped.js is a library that types any given string",
   "main": "dist/autotyped.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "npm i -D autoprefixer browser-sync gulp gulp-concat gulp-html-replace gulp-htmlmin gulp-postcss gulp-sass gulp-surge gulp-uglify gulp-watch"
   },
   "repository": {
     "type": "git",
@@ -24,16 +24,16 @@
   },
   "homepage": "https://github.com/xemichar/autotyped.js#readme",
   "devDependencies": {
-    "autoprefixer": "^7.2.3",
-    "browser-sync": "^2.18.13",
+    "autoprefixer": "^9.0.2",
+    "browser-sync": "^2.24.6",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-html-replace": "^1.6.2",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-postcss": "^7.0.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
     "gulp-surge": "^0.1.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-watch": "^4.3.11"
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1"
   }
 }
