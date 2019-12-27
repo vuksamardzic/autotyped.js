@@ -1,20 +1,16 @@
-@keyframes at-left-slide
-{
-  from
-  {
+@keyframes at-left-slide {
+  from {
     opacity: 0;
     transform: translateX(50px);
   }
 
-  to
-  {
+  to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-.at-left-slide
-{
+.at-left-slide {
   display: inline-block;
   animation-name: at-left-slide;
 }

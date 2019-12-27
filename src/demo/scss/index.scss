@@ -1,11 +1,9 @@
-html
-{
+html {
   height: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
-body
-{
+body {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -15,24 +13,20 @@ body
   flex-direction: column;
 }
 
-.main-wrapper
-{
+.main-wrapper {
   max-width: 425px;
   width: 100%;
 }
 
-form
-{
+form {
   text-align: center;
 
-  & > div
-  {
+  & > div {
     display: inline-block;
     padding-right: 10px;
   }
 
-  select
-  {
+  select {
     padding: 10px 5px;
     border: 1px solid lightgray;
     color: #6f6f6f;
@@ -41,16 +35,14 @@ form
     width: 100%;
   }
 
-  label
-  {
+  label {
     display: block;
     color: #6f6f6f;
     padding: 10px 0;
     font-weight: 300;
   }
-  
-  .type-button
-  {
+
+  .type-button {
     display: inline-block;
     padding: 10px 15px;
     border: 2px solid #8f8f8f;
@@ -63,57 +55,50 @@ form
   }
 }
 
-h1
-{
+h1 {
   font-size: 80px;
   font-weight: 100;
   margin: 0;
+  line-height: 1;
   color: rgba(29, 121, 181, 0.72);
 }
 
-p
-{
+p {
   font-weight: 300;
   font-size: 25px;
   color: lightgrey;
   text-align: center;
 }
 
-.db
-{
+.db {
   display: block;
-  p
-  {
+
+  p {
     color: #a5a5a5;
     font-size: 15px;
-    &.author
-    {
+
+    &.author {
       font-size: 13px;
       color: #3d464d;
       text-align: center;
 
-      & > a
-      {
+      & > a {
         font-weight: 500;
       }
     }
 
-    a
-    {
+    a {
       color: rgb(123, 137, 147);
     }
   }
 }
 
-@media screen and (max-width: 640px)
-{
-  .main-wrapper
-  {
+@media screen and (max-width: 640px) {
+  .main-wrapper {
     max-width: 342px;
   }
 
-  h1
-  {
+  h1 {
     font-size: 65px;
   }
 }

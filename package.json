@@ -2,13 +2,18 @@
   "name": "autotyped.js",
   "version": "1.0.0",
   "description": "autotyped.js is a library that types any given string",
-  "main": "dist/autotyped.js",
+  "main": "lib/autotyped.js",
   "scripts": {
-    "init": "npm i -D autoprefixer browser-sync gulp gulp-concat gulp-html-replace gulp-htmlmin gulp-postcss gulp-sass gulp-surge gulp-uglify gulp-watch"
+    "dev": "./node_modules/.bin/webpack --config webpack.dev.js",
+    "prod": "./node_modules/.bin/webpack --config webpack.prod.js",
+    "demo:dev": "./node_modules/.bin/webpack-dev-server --open",
+    "demo:prod": "./node_modules/.bin/webpack -p",
+    "surge": "surge -d autotypedjs.surge.sh -p ./demo",
+    "deploy": "npm run prod && npm run demo:prod && npm run surge"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xemichar/autotyped.js.git"
+    "url": "git+https://github.com/vuksamardzic/autotyped.js.git"
   },
   "keywords": [
     "autotyped",
@@ -20,20 +25,26 @@
   "author": "Vuk Samardžić <samardzic.vuk@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xemichar/autotyped.js/issues"
+    "url": "https://github.com/vuksamardzic/autotyped.js/issues"
   },
-  "homepage": "https://github.com/xemichar/autotyped.js#readme",
+  "homepage": "https://github.com/vuksamardzic/autotyped.js#readme",
   "devDependencies": {
-    "autoprefixer": "^9.0.2",
-    "browser-sync": "^2.24.6",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-html-replace": "^1.6.2",
-    "gulp-htmlmin": "^4.0.0",
-    "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^4.0.1",
-    "gulp-surge": "^0.1.0",
-    "gulp-uglify": "^3.0.1",
-    "gulp-watch": "^5.0.1"
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "autoprefixer": "^9.7.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.3.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2",
+    "yargs": "^15.0.2"
   }
 }
