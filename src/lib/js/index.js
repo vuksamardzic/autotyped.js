@@ -2,12 +2,13 @@ import '../scss/autotyped.scss';
 import { config } from './config';
 import { $$, addClass, hasClass, removeClass } from './helpers';
 
+
 export default class Autotyped {
-  constructor(selector = '.at-init', settings) {
-    this.el = $$(selector);
+  constructor(settings) {
+    this.settings = Object.assign({}, config, settings);
+    this.el = $$(this.settings.selector);
     this.text = this.el.map(t => t.innerText);
     this.interval = [];
-    this.settings = Object.assign({}, config, settings);
   }
 
   init(settings) {
@@ -21,6 +22,9 @@ export default class Autotyped {
   _render(i) {
     const text = this.settings.text.length ? this.settings.text[i].split('') : this.text[i].split('');
     let raw = '';
+    if (!hasClass(this.el[i], 'at-init')) {
+      addClass(this.el[i], 'at-init');
+    }
     if (!hasClass(this.el[i], 'at-running')) {
       const w = this.el[i].clientWidth;
       const h = this.el[i].clientHeight;
