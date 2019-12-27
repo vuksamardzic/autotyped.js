@@ -20,8 +20,8 @@
   &.at-running {
     opacity: 1;
   }
-}
 
-.at-done {
-  opacity: 1;
+  &.at-done {
+    opacity: 1;
+  }
 }
