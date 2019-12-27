@@ -1,0 +1,27 @@
+/**
+ |--------------------------------------------------------------------------
+ | File: autotyped.scss
+ | @desc (Sassy css) main file
+ | @author Vuk Samardžić <samardzic.vuk@gmail.com>
+ |--------------------------------------------------------------------------
+ */
+
+@import 'animation/bounce';
+@import 'animation/rotate';
+@import 'animation/rubber-band';
+@import 'animation/pop-in';
+@import 'animation/left-slide';
+@import 'animation/right-slide';
+@import 'animation/meteor-shower';
+
+.at-init {
+  opacity: 0;
+
+  &.at-running {
+    opacity: 1;
+  }
+}
+
+.at-done {
+  opacity: 1;
+}

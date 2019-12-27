@@ -1,20 +1,16 @@
-@keyframes at-right-slide
-{
-  from
-  {
+@keyframes at-right-slide {
+  from {
     transform: translateX(-50px);
     opacity: 0;
   }
 
-  to
-  {
+  to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-.at-right-slide
-{
+.at-right-slide {
   display: inline-block;
   animation-name: at-right-slide;
 }
