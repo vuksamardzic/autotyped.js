@@ -37,7 +37,7 @@ selector | string | '.at-init' | CSS selector.
 animate | boolean | true | Choose whether you animate or not.
 animation | string | 'bounce' | Choose which animation you use. Available `'bounce'`, `'rotate'`, `'rubber-band'`, `'pop-in'`, `'left-slide'`, `'right-slide'`, `'meteor-shower'`.
 speed | int | 200 | Autotype speed in ms.
-text | string[] | [] | Text you feed to autotyped.js
+text | string[] | [] | Text you feed to autotyped.js if you want custom text to type.
 
 ### Example
 ```html
@@ -65,6 +65,15 @@ text | string[] | [] | Text you feed to autotyped.js
     //we want specific selector with custom speed and other animation
     const autotyped = new Autotyped();
     autotyped.init({speed: 250, animation: 'rotate', selector: '#myElement'});
+</script>
+```
+```html
+<p class="at-init">Text to be autotyped!</p>
+ 
+<script>
+    //We want custom text to type, not text inside element
+    const autotyped = new Autotyped();
+    autotyped.init({text: ['My custom text to type!']});
 </script>
 ```
 #### License
