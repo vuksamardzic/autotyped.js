@@ -24,4 +24,8 @@
   &.at-done {
     opacity: 1;
   }
+
+  [class^="at-"] {
+    display: inline-block !important;
+  }
 }

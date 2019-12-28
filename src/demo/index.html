@@ -10,15 +10,14 @@
   <link rel="stylesheet" href="<%= lib.css %>">
   <title>autotyped.js</title>
 </head>
-<body>
-
-<div class="main-wrapper">
-  <h1 class="at-init">autotyped.js</h1>
-  <p>Pick and play :)</p>
-  <form>
-    <div>
-      <label for="animation-select">Select animation</label>
-      <select name="animation" id="animation-select">
+<body class="demo">
+<div class="demo__body">
+  <h1 class="demo__header at-init">autotyped.js</h1>
+  <p class="demo__sub-header">Pick and play :)</p>
+  <form class="demo__form">
+    <div class="demo__form-group">
+      <label class="demo__label" for="animation-select">Select animation</label>
+      <select class="demo__select" id="animation-select">
         <option value="bounce" selected="selected">bounce</option>
         <option value="rotate">rotate</option>
         <option value="rubber-band">rubberBand</option>
@@ -28,9 +27,10 @@
         <option value="meteor-shower">meteorShower</option>
       </select>
     </div>
-    <div>
-      <label for="speed-select">Select speed</label>
-      <select name="speed" id="speed-select">
+    <div class="demo__form-group">
+      <label class="demo__label" for="speed-select">Select speed</label>
+      <select class="demo__select"
+              id="speed-select">
         <option value="50">50</option>
         <option value="100">100</option>
         <option value="150">150</option>
@@ -45,16 +45,18 @@
         <option value="800">800</option>
       </select>
     </div>
-    <div class="type-button">type</div>
-    <div class="db">
-      <p>Download <a download="autotyped.js"
-                     href="https://raw.githubusercontent.com/vuksamardzic/autotyped.js/master/lib/autotyped.js">autotyped.js</a>
-        and <a download="autotyped.css"
-               href="https://raw.githubusercontent.com/vuksamardzic/autotyped.js/master/lib/autotyped.css">autotyped.css</a>
-        or check on <a href="https://github.com/vuksamardzic/autotyped.js">GitHub</a>.</p>
-      <p class="author">Made by <a href="https://github.com/vuksamardzic">Vuk Samardžić</a>.</p>
-    </div>
+    <div class="demo__form-group demo__form-button">type</div>
   </form>
+  <p class="demo__text">Download <a class="demo__link demo__link--light"
+                                    download="autotyped.js"
+                                    href="https://raw.githubusercontent.com/vuksamardzic/autotyped.js/master/lib/autotyped.js">autotyped.js</a>
+    and <a class="demo__link demo__link--light"
+           download="autotyped.css"
+           href="https://raw.githubusercontent.com/vuksamardzic/autotyped.js/master/lib/autotyped.css">autotyped.css</a>
+    or check on <a class="demo__link demo__link--light"
+                   href="https://github.com/vuksamardzic/autotyped.js">GitHub</a>.</p>
+  <p class="demo__author">Made by <a class="demo__link"
+                                     href="https://github.com/vuksamardzic">Vuk Samardžić</a>.</p>
 </div>
 <script src="<%= lib.js %>"></script>
 </body>

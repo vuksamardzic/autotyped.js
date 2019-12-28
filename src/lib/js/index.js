@@ -28,8 +28,8 @@ export default class Autotyped {
     if (!hasClass(this.el[i], 'at-running')) {
       const w = this.el[i].clientWidth;
       const h = this.el[i].clientHeight;
-      this.el[i].style.width = `${w}px`;
-      this.el[i].style.height = `${h}px`;
+      this.el[i].style.minWidth = `${Math.ceil(w)}px`;
+      this.el[i].style.height = `${Math.ceil(h)}px`;
       this.el[i].innerHTML = '';
       addClass(this.el[i], 'at-running');
       if (hasClass(this.el[i], 'at-done')) {
@@ -42,7 +42,7 @@ export default class Autotyped {
           if (hasClass(this.el[i], 'at-running')) {
             removeClass(this.el[i], 'at-running');
             addClass(this.el[i], 'at-done');
-            this.el[i].style.removeProperty('width');
+            this.el[i].style.removeProperty('min-width');
             this.el[i].style.removeProperty('height');
           }
         } else {

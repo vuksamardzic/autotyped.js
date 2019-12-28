@@ -4,7 +4,7 @@ import './../scss/index.scss';
 window.onload = (ev) => {
   const autotyped = new Autotyped();
   autotyped.init();
-  const $submit = document.querySelector('.type-button');
+  const $submit = document.querySelector('.demo__form-button');
   const $animation = document.querySelector('#animation-select');
   const $speed = document.querySelector('#speed-select');
 
