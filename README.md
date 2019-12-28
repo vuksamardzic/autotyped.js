@@ -8,13 +8,13 @@ autotyped.js is a library that types any string.
 Just add a link to the css file in your `<head>`:
 
 ```html
-<link rel="stylesheet" type="text/css" href="./lib/autotyped.css"/>
+<link rel="stylesheet" type="text/css" href="{path}/lib/autotyped.css"/>
 ```
 
 Then, before your closing ```<body>``` tag add:
 
 ```html
-<script type="text/javascript" src="./lib/autotyped.min.js"></script>
+<script type="text/javascript" src="{path}/lib/autotyped.min.js"></script>
 ```
 
 ### Usage

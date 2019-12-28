@@ -1,6 +1,6 @@
 {
   "name": "autotyped.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "autotyped.js is a library that types any given string",
   "main": "lib/autotyped.js",
   "scripts": {
