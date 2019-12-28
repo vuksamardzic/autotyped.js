@@ -1,6 +1,10 @@
 # autotyped.js
 autotyped.js is a library that types any string.
 
+```sh
+npm i autotyped.js
+```
+
 [Demo](https://vuksamardzic.github.io/autotyped.js/)
 
 ### Includes
